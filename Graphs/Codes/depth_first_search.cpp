@@ -5,33 +5,23 @@ using namespace std;
  
 typedef long long ll;
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
-
-// BFS from a startVertex
-void printGraphBFS(int** edges, int numVertices, int startingVertex, bool* visited) {
-    queue<int> q;
-    q.push(startingVertex);
+ 
+// DFS from a startVertex
+void printGraphDFS(int** edges, int numVertices, int startingVertex, bool* visited) {
+    cout << startingVertex << " ";
     visited[startingVertex] = true;
 
-    while (!q.empty()) {
-        int front = q.front();
-        cout << front << " ";
+    for (int i = 0; i < numVertices; i++) {
+        if (i == startingVertex)
+            continue;
         
-        q.pop();
-        for (int i = 0; i < numVertices; i++) {
-            if (i == front)
-                continue;
-            
-            if (edges[front][i] == 1 && visited[i] == false) {
-                q.push(i);
-                visited[i] = true;
-            }
-        }
+        if (edges[startingVertex][i] == 1 && visited[i] == false) // means connected and not visited earlier
+            printGraphDFS(edges, numVertices, i, visited);
     }
-    return;
 }
 
-// BFS for disconnected components
-void BFS(int** edges, int numVertex) {
+// DFS for disconnected components
+void DFS(int** edges, int numVertex) {
     bool* visited = new bool[numVertex];
 
     for (int i = 0; i < numVertex; i++)
@@ -39,11 +29,13 @@ void BFS(int** edges, int numVertex) {
 
     for (int i = 0; i < numVertex; i++) {
         if (visited[i] ==  false)
-            printGraphBFS(edges, numVertex, i, visited); // startingVertex = i
+            printGraphDFS(edges, numVertex, i, visited); // startingVertex = i
     }
     delete [] visited;
 }
- 
+
+
+
 int main()
 {
     fast_cin();
@@ -65,7 +57,7 @@ int main()
         edges[secondVertex][firstVertex] = 1;
     }
 
-    BFS(edges, numVertices);
+    DFS(edges, numVertices);
 
     // Deleting the graph
     for (int i = 0; i < numVertices; i++)
