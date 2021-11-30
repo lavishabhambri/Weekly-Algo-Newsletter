@@ -1,4 +1,5 @@
 # Weekly-Algo-Newsletter
+## Algorithms & Design Course Project 
 
 
 The sole idea of the project is to make a Weekly Newsletter. This newsletter will consist of different Algorithms and Data Structures and their applications. The structure of every newsletter will be as follows:-
