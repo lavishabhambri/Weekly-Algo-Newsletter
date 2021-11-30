@@ -1,5 +1,6 @@
 # Weekly-Algo-Newsletter
 
+
 The sole idea of the project is to make a Weekly Newsletter. This newsletter will consist of different Algorithms and Data Structures and their applications. The structure of every newsletter will be as follows:-
 
 - History of algorithm
@@ -92,17 +93,18 @@ The sole idea of the project is to make a Weekly Newsletter. This newsletter wil
 - Unbounded Knapsack
 - Kadane's algorithm
 
+## Stats
 
-
-
-
-
-
-
-
-
-
-
-
+| Topic         | Number of Newsletters |
+| ------------- | ------------- |
+| Introduction to algorithms  | 1  |
+| Searching  | 2  |
+| Sorting | 4  |
+| Number Theory  | 4  |
+| Greedy Technique  | 1  |
+| Graphs  | 8  |
+| Dynamic Programming  | 5  |
+| Applications  | 1  |
+| Total  | 26 |
 
 
